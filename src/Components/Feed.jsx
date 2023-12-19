@@ -1,9 +1,9 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import {Box, Stack, Typography, Button} from '@mui/material';
+import {Box, Stack, Typography, Button, colors} from '@mui/material';
 import {SideBar, Videos} from './';
 import {fetchFromAPI} from '../utils/fetchFromAPI';
-
+import { Link } from 'react-router-dom';
 
 const Feed = () => {
   const [selectedCategory, setSelectedCategory] = useState('New');
@@ -18,7 +18,7 @@ const Feed = () => {
       <Box sx={{height:{sx:'auto', md:'92vh'}, borderRight:'1px solid #3d3d3d' ,px: {sx:0 ,md:2}}}>
         <SideBar selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
         <Typography className='copyright' variant="body2" sx={{mt:1.5, color:'#fff', position:'sticky'}}>
-          Copyright ©️ 2023 | Neel Sheth
+          Copyright ©️ 2023 | <Link to="https://github.com/maineel/TouYube/tree/master" target='_blank' style={{textDecoration:'none', color:'white'}}><u>Neel Sheth</u></Link>
         </Typography>
       </Box>
       <Box p={2} sx={{overflowY:'auto', height:'90vh', flex:2}}>
